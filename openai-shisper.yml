@@ -1,0 +1,30 @@
+# Title: openai-whisper
+# Description: OpenAI Whisper Speech2Text Web Service
+# Note: https://ahmetoner.com/whisper-asr-webservice/endpoints/
+# Icon URL: https://dashboard.snapcraft.io/site_media/appmedia/2023/04/whisper-gael.png
+# URL: https://ahmetoner.com/whisper-asr-webservice/endpoints/
+
+services:
+  whisper:
+    image: onerahmet/openai-whisper-asr-webservice:v1.4.1
+    ports:
+      - 9000:9000
+    volumes:
+      #- app:/app/app
+      - cache-pip:/root/.cache/pip
+      - cache-poetry:/root/.cache/poetry
+      - cache-whisper:/root/.cache/whisper
+    environment:
+      - ASR_MODEL=medium
+      - ASR_ENGINE=openai_whisper
+    restart: unless-stopped
+
+volumes:
+  cache-pip:
+  cache-poetry:
+  cache-whisper:
+  cache-faster-whisper:
+
+# Endpoint Documentation
+# https://ahmetoner.com/whisper-asr-webservice/endpoints/
+

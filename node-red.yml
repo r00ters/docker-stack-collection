@@ -1,0 +1,19 @@
+# Title: node-red
+# Description: Node-RED
+# Note: 
+# Icon URL: https://nodered.org/about/resources/media/node-red-icon-2.png
+# URL: https://nodered.org/
+
+services:
+  nodered:
+    image: nodered/node-red
+    restart: always
+    volumes:
+    - node-red-data:/data
+    ports:
+    - 1880:1880 # node-red
+    environment:
+    - TZ=Europe/Rome
+
+volumes:
+  node-red-data:
