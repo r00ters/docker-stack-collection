@@ -1,0 +1,30 @@
+# Title: Stilring PDF
+# Description: A locally hosted one-stop shop for all your PDF needs
+# Note: Instantly view, merge, and adjust PDFs without exposing sensitive information
+# Icon URL: https://cdn.prod.website-files.com/66d2b621cb0b824deff321d0/66d8973ad239982149c983eb_stirling-webclip.png
+# URL: https://www.stirlingpdf.com/
+
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    ports:
+      - '8080:8080'
+    volumes:
+      - trainingData:/usr/share/tessdata # Required for extra OCR languages
+      - extraConfigs:/configs
+      - customFiles:/customFiles/
+      - logs:/logs/
+      - pipeline:/pipeline/
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - LANGS=it_IT
+
+volumes:
+  trainingData:
+  extraConfigs:
+  customFiles:
+  logs:
+  pipeline:
+
+# Docs: https://docs.stirlingpdf.com/
+
