@@ -6,7 +6,7 @@
 
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:latest
+    image: gethomepage/homepage:latest
     container_name: homepage
     #environment:
       #PUID: 1000 # optional, your user id

@@ -1,0 +1,15 @@
+# Title: Open WebUI
+# Description: Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.
+# Note: https://github.com/open-webui/open-webui
+# Icon URL: https://raw.githubusercontent.com/open-webui/open-webui/refs/heads/main/static/favicon.png
+# URL: https://github.com/open-webui/open-webui
+
+services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui:/app/backend/data
+volumes:
+  open-webui:
